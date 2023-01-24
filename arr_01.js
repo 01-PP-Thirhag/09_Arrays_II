@@ -37,9 +37,9 @@ const TAGS = [  "html",
 				"body",
                 "h1","h1",
                 "p","p",
-                "ul","li","li","li","li","li","li","ul",
-                "p","p",
-                "ol","li","li","ol",
+                "ul",
+                "li","li","li","li","li","li",
+                "ul",
                 "body",
 				"html"
             ];
@@ -97,10 +97,6 @@ function isOpenElement(tag) {
         return false;
     }
 }
-
-
-
-
 
 // Modul: Ausgabe | Test
 //output("hi");
