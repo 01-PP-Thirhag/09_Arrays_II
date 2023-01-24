@@ -2,10 +2,22 @@
 
 // push() / pop()
 // push --> Daten rein ... (+)
+// let arr = [];
+// output(arr);
+// arr.push("Ich");
+// output(arr);
+// arr.push("bin");
+// output(arr);
+// arr.push("Miez");
+// output(arr);
 
-
-// pop() --> Daten raus ... (-)
-
+// // pop() --> Daten raus ... (-) 
+// output(arr.pop());
+// output(arr);
+// output(arr.pop());
+// output(arr);
+// output(arr.pop());
+// output(arr);
 
 
 /*
@@ -33,25 +45,23 @@ const TAGS = [  "html",
 let stack = [];
 
 // Modul: HTML-Synthese | Test
-output(getHTML());
-function getHTML() {
+// output(getHTML());
+// function getHTML() {
   
-    let htmlStr = "";
+//     let htmlStr = "";
 
-    for (let i = 0; i < TAGS.length; i++) {
-        if (condition) 
-        // if(true)
-        // if(false)
-        {
-            htmlStr += getElement(TAGS[i],"open");
-        } else {
-            htmlStr += getElement(TAGS[i],"close"); 
-        }
-        // htmlStr += "</" + TAGS[i] + ">";
-    }
+//     for (let i = 0; i < TAGS.length; i++) {
+//         if (isOpenElement()) 
+//         {
+//             htmlStr += getElement(TAGS[i],"open");
+//         } else {
+//             htmlStr += getElement(TAGS[i],"close"); 
+//         }
+//         // htmlStr += "</" + TAGS[i] + ">";
+//     }
 
-    return htmlStr;
-}
+//     return htmlStr;
+// }
 
 
 // Modul: Zusammenbau der Elements: <TAGStr> --> Tests:
@@ -68,10 +78,29 @@ function getElement(tag,op) {
                 return ERR_Str;
     
 }
-
     
 }
-        
+
+output(isOpenElement(TAGS[0]));
+output(isOpenElement(TAGS[1]));
+output(isOpenElement(TAGS[2]));
+function isOpenElement(tag) {
+
+    let cond = (tag != stack[stack.length-1]);
+
+    if (cond){
+        stack.push(tag);
+        output(stack);
+        return true;
+    } else{
+        stack.pop();
+        output.stack;
+        return false;
+    }
+}
+// function isOpenElement() {
+//         return false;
+// }        
 
 
 
