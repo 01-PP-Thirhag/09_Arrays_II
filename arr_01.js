@@ -16,9 +16,9 @@ einer HTML-Seite ausgibt:
 Verwenden Sie dafür die untenstehenden Arrays
 */
 
-const cobj      = {open_o:"<",close_o:"</",close:">"}
-const controls  = ["<", "</", ">"];
-const tags = [  "html",
+const COBJ      = {open_o:"<",close_o:"</",close:">"}
+const CONTROLS  = ["<", "</", ">"];
+const TAGS = [  "html",
 				"head","head",
 				"body",
                 "h1","h1",
@@ -34,6 +34,7 @@ let stack = [];
 
 // Modul: HTML-Synthese | Test
 output(getHTML());
+<<<<<<< HEAD
 function getHTML() { 
     let htmlStr = "";
     for (let i = 0; i < TAGS.length; i++) {
@@ -41,7 +42,18 @@ function getHTML() {
     }
         return htmlStr;
     }
+=======
+function getHTML() {
+  
+    let htmlStr = "";
+>>>>>>> 4763fff2a1bec7fc3359dcf0586e6a707bb9e5af
 
+    for (let i = 0; i < TAGS.length; i++) {
+        htmlStr += "</" + TAGS[i] + ">";
+    }
+
+   return htmlStr;
+}
 
 
 
@@ -49,6 +61,10 @@ function getHTML() {
 // output(getElement(tags[1],"open"));
 // output(getElement(tags[1],"close"));
 // output(getElement(tags[1]));
+
+
+
+
 
 
 // Modul: Ausgabe | Test
