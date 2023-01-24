@@ -34,19 +34,9 @@ let stack = [];
 
 // Modul: HTML-Synthese | Test
 output(getHTML());
-<<<<<<< HEAD
-function getHTML() { 
-    let htmlStr = "";
-    for (let i = 0; i < TAGS.length; i++) {
-        htmlStr +="</" TAGS[i] + ">";
-    }
-        return htmlStr;
-    }
-=======
 function getHTML() {
   
     let htmlStr = "";
->>>>>>> 4763fff2a1bec7fc3359dcf0586e6a707bb9e5af
 
     for (let i = 0; i < TAGS.length; i++) {
         htmlStr += "</" + TAGS[i] + ">";
