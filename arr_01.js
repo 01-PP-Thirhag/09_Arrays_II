@@ -15,7 +15,7 @@ einer HTML-Seite ausgibt:
 <html><head></head><body><h1></h1><p></p></body></html>
 Verwenden Sie dafür die untenstehenden Arrays
 */
-
+const ERR_Str   = "!ERROR!"
 const COBJ      = {open_o:"<",close_o:"</",close:">"}
 const CONTROLS  = ["<", "</", ">"];
 const TAGS = [  "html",
@@ -39,20 +39,39 @@ function getHTML() {
     let htmlStr = "";
 
     for (let i = 0; i < TAGS.length; i++) {
-        htmlStr += "</" + TAGS[i] + ">";
+        if (condition) 
+        // if(true)
+        // if(false)
+        {
+            htmlStr += getElement(TAGS[i],"open");
+        } else {
+            htmlStr += getElement(TAGS[i],"close"); 
+        }
+        // htmlStr += "</" + TAGS[i] + ">";
     }
 
-   return htmlStr;
+    return htmlStr;
 }
 
 
+// Modul: Zusammenbau der Elements: <TAGStr> --> Tests:
+// output(getElement(TAGS[1],"open"));
+// output(getElement(TAGS[1],"close"));
+// output(getElement(TAGS[1]));
+function getElement(tag,op) {
+    	switch (op) {
+            case "open":
+                return COBJ.open_o + tag + COBJ.close;
+            case "close":
+                return COBJ.close_o + tag + COBJ.close;
+            default:
+                return ERR_Str;
+    
+}
 
-// Modul: Zusammenbau der Elements: <tagStr> --> Tests:
-// output(getElement(tags[1],"open"));
-// output(getElement(tags[1],"close"));
-// output(getElement(tags[1]));
-
-
+    
+}
+        
 
 
 
