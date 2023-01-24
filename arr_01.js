@@ -40,9 +40,7 @@ function getHTML() {
     let htmlStr = "";
 
     for (let i = 0; i < TAGS.length; i++) {
-        if (condition) 
-        // if(true)
-        // if(false)
+        if (isOpenElement()) 
         {
             htmlStr += getElement(TAGS[i],"open");
         } else {
@@ -69,6 +67,9 @@ function getElement(tag,op) {
     }
 }
 
+function isOpenElement() {
+    return false;
+}
 
 
 
