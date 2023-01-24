@@ -33,7 +33,14 @@ const tags = [  "html",
 let stack = [];
 
 // Modul: HTML-Synthese | Test
-//output(getHTML());
+output(getHTML());
+function getHTML() { 
+    let htmlStr = "";
+    for (let i = 0; i < TAGS.length; i++) {
+        htmlStr +="</" TAGS[i] + ">";
+    }
+        return htmlStr;
+    }
 
 
 
