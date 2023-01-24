@@ -37,9 +37,9 @@ const TAGS = [  "html",
 				"body",
                 "h1","h1",
                 "p","p",
-                "ul","li","li","li","li","li","li","ul",
-                "p","p",
-                "ol","li","li","ol",
+                "ul",
+                "li","li","li","li","li","li",
+                "ul",
                 "body",
 				"html"
             ];
@@ -47,13 +47,13 @@ const TAGS = [  "html",
 let stack = [];
 
 // Modul: HTML-Synthese | Test
-// output(getHTML());
+output(getHTML());
 function getHTML() {
   
     let htmlStr = "";
 
     for (let i = 0; i < TAGS.length; i++) {
-        if (isOpenElement()) 
+        if (isOpenElement(TAGS[i])) 
         {
             htmlStr += getElement(TAGS[i],"open");
         } else {
@@ -81,9 +81,9 @@ function getElement(tag,op) {
 }
 
 // Modul: Test auf open/close Tests:
-output(isOpenElement(TAGS[0]));
-output(isOpenElement(TAGS[1]));
-output(isOpenElement(TAGS[2]));
+// output(isOpenElement(TAGS[0]));
+// output(isOpenElement(TAGS[1]));
+// output(isOpenElement(TAGS[2]));
 function isOpenElement(tag) {
     
     let cond = (tag != stack[stack.length-1]);
@@ -98,10 +98,6 @@ function isOpenElement(tag) {
         return false;
     }
 }
-
-
-
-
 
 // Modul: Ausgabe | Test
 //output("hi");
