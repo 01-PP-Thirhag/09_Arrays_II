@@ -3,15 +3,16 @@
 // push() / pop()
 // push --> Daten rein ... (+)
 // let arr = [];
+
 // output(arr);
 // arr.push("Ich");
 // output(arr);
 // arr.push("bin");
 // output(arr);
-// arr.push("Miez");
+// arr.push("Max");
 // output(arr);
 
-// // pop() --> Daten raus ... (-) 
+// // pop() --> Daten raus ... (-)
 // output(arr.pop());
 // output(arr);
 // output(arr.pop());
@@ -27,7 +28,8 @@ einer HTML-Seite ausgibt:
 <html><head></head><body><h1></h1><p></p></body></html>
 Verwenden Sie dafür die untenstehenden Arrays
 */
-const ERR_Str   = "!ERROR!"
+
+const ERR_STR   = "ERROR";
 const COBJ      = {open_o:"<",close_o:"</",close:">"}
 const CONTROLS  = ["<", "</", ">"];
 const TAGS = [  "html",
@@ -46,61 +48,55 @@ let stack = [];
 
 // Modul: HTML-Synthese | Test
 // output(getHTML());
-// function getHTML() {
+function getHTML() {
   
-//     let htmlStr = "";
+    let htmlStr = "";
 
-//     for (let i = 0; i < TAGS.length; i++) {
-//         if (isOpenElement()) 
-//         {
-//             htmlStr += getElement(TAGS[i],"open");
-//         } else {
-//             htmlStr += getElement(TAGS[i],"close"); 
-//         }
-//         // htmlStr += "</" + TAGS[i] + ">";
-//     }
-
-//     return htmlStr;
-// }
+    for (let i = 0; i < TAGS.length; i++) {
+        if (isOpenElement()) 
+        {
+            htmlStr += getElement(TAGS[i],"open");
+        } else {
+            htmlStr += getElement(TAGS[i],"close");
+        }
+    }
+}
 
 
-// Modul: Zusammenbau der Elements: <TAGStr> --> Tests:
+// Modul: Zusammenbau der Elements: <tagStr> --> Tests:
 // output(getElement(TAGS[1],"open"));
 // output(getElement(TAGS[1],"close"));
 // output(getElement(TAGS[1]));
 function getElement(tag,op) {
-    	switch (op) {
-            case "open":
-                return COBJ.open_o + tag + COBJ.close;
-            case "close":
-                return COBJ.close_o + tag + COBJ.close;
-            default:
-                return ERR_Str;
-    
-}
-    
+    switch (op) {
+        case "open":
+            return COBJ.open_o + tag + COBJ.close;
+        case "close":
+            return COBJ.close_o + tag + COBJ.close;
+        default:
+            return ERR_STR;
+    }
 }
 
+// Modul: Test auf open/close Tests:
 output(isOpenElement(TAGS[0]));
 output(isOpenElement(TAGS[1]));
 output(isOpenElement(TAGS[2]));
 function isOpenElement(tag) {
-
+    
     let cond = (tag != stack[stack.length-1]);
 
-    if (cond){
+    if (cond) {
         stack.push(tag);
         output(stack);
         return true;
-    } else{
+    } else {
         stack.pop();
-        output.stack;
+        output(stack);
         return false;
     }
 }
-// function isOpenElement() {
-//         return false;
-// }        
+
 
 
 
